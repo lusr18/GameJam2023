@@ -488,7 +488,7 @@ TextureImporter:
         width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -926,7 +926,7 @@ TextureImporter:
         serializedVersion: 2
         x: 321
         y: 129
-        width: 30
+        width: 15
         height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2042,7 +2042,7 @@ TextureImporter:
         width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2063,7 +2063,7 @@ TextureImporter:
         width: 16
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2084,7 +2084,7 @@ TextureImporter:
         width: 16
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2105,7 +2105,7 @@ TextureImporter:
         width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2126,7 +2126,7 @@ TextureImporter:
         width: 16
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2134,6 +2134,27 @@ TextureImporter:
       bones: []
       spriteID: 03df4c2e37e9e754aabea38fe2c596d9
       internalID: -914862585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alex_16x16_96
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 129
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978f616e0b615294380abe2b6aaf6c35
+      internalID: -448736692
       vertices: []
       indices: 
       edges: []
@@ -2245,6 +2266,8 @@ TextureImporter:
       Alex_16x16_93: 1908436150
       Alex_16x16_94: -885455797
       Alex_16x16_95: -914862585
+      Alex_16x16_96: -448736692
+      Alex_16x16_97: 619102642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
