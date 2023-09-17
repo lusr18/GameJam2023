@@ -6196,6 +6196,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1092509220916606622, guid: 3963ce81738cf4741beed32b027d79bf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1718359687, guid: c9ea0b75f7de7dc4a910e933efcf767c, type: 3}
     - target: {fileID: 1650490660996135272, guid: 3963ce81738cf4741beed32b027d79bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6295,7 +6299,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.15, y: 0.22}
+    oldSize: {x: 0.16, y: 0.22}
     newSize: {x: 0.14, y: 0.22}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
