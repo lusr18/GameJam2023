@@ -12,7 +12,6 @@ public class ObjectInteract : MonoBehaviour
     void Start()
     {
         playerInRange = false;
-        vendingMachine = GetComponent<AudioSource>();
     }
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){

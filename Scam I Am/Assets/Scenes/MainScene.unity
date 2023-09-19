@@ -5396,7 +5396,7 @@ GameObject:
   - component: {fileID: 1797345918}
   - component: {fileID: 1797345917}
   m_Layer: 0
-  m_Name: Static Sprite
+  m_Name: vending machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
