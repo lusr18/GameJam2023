@@ -1,77 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+
+using UnityEngine.AI;
 
 public class NPCController : MonoBehaviour
 {
-    public GameObject dialoguePanel;
-    public TextMeshProUGUI dialogueText;
-    public string[] dialogue;
-    private int index;
-
-    public float wordSpeed;
-    private bool playerInRange;
     
-    // Start is called before the first frame update
+    public Dialogue dialogue;
+
+    private bool playerInRange = false;
+
+    [SerializeField] Transform target;
+    private NavMeshAgent agent;
+
     void Start()
     {
-        
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       if(playerInRange == false)
+        agent.SetDestination(target.position);
     }
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
             playerInRange = true;
+            agent.SetDestination(transform.position);
         }
     }
 
     void OnTriggerExit2D(Collider2D other){
         if(other.CompareTag("Player")){
             playerInRange = false;   
-            ResetText();
+            agent.SetDestination(target.position);
         }
     }
 
     void OnMouseDown(){
         if(playerInRange){
-            if(dialoguePanel.activeInHierarchy){
-                NextLine();
-            }
-            else{
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
-            }
+           FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
         }
     }
 
-    public void ResetText(){
-        dialogueText.text = "";
-        index = 0;
-        dialoguePanel.SetActive(false);
-    }
-
-    IEnumerator Typing(){
-        foreach(char letter in dialogue[index].ToCharArray()){
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(wordSpeed);
-        }
-    }
-
-    public void NextLine(){
-        if(index < dialogue.Length - 1){
-            index++;
-            dialogueText.text = "";
-            StartCoroutine(Typing());
-        }
-        else{
-            ResetText();
-        }
-    }
 }
