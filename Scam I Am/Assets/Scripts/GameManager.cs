@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     void Update(){
         if(victimCount == 1){
             currentLevel = 1;
+        } else if(victimCount == 2){
+            currentLevel = 2;
         }
     }
 

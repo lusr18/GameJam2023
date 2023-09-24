@@ -29,6 +29,7 @@ public class MissionManager : MonoBehaviour
         //string[] temp = new string[]{"Ugh...have to gain his trust to overthrow him...", "Guess I have to keep scamming...", "ring ring ring..."};
         //dialogue.sentences = temp;
         //FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        button3.gameObject.SetActive(true);
         if (FindObjectOfType<GameManager>().currentLevel == 2){
             string[] temp = new string[]{"You have scammed enough victims of good money...", "You have earned the trust of coworkers and your boss...", "Maybe stop scamming and see what else you can do to stop them now!"};
             dialogue.sentences = temp;
@@ -70,7 +71,7 @@ public class MissionManager : MonoBehaviour
                 dialogueText.text = "Thanks I will buy your meds, my bank account is 5555-5555";
                 FindObjectOfType<GameManager>().victimCount++;
                 animator.SetBool("isOpen", false);
-            } else if(choicee == 1){
+            } else if(choice == 1){
                 dialogueText.text = "You're rude! Goodbye!";
                 animator.SetBool("isOpen", false);
             }
