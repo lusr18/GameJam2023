@@ -69,7 +69,7 @@ public class MissionManager : MonoBehaviour
         if(missiontype == 0){ 
             if(choice == 0){
                 dialogueText.text = "Thanks I will buy your meds, my bank account is 5555-5555";
-                FindObjectOfType<GameManager>().victimCount++;
+                FindObjectOfType<GameManager>().ScamSuccessful();
                 animator.SetBool("isOpen", false);
             } else if(choice == 1){
                 dialogueText.text = "You're rude! Goodbye!";
@@ -81,13 +81,13 @@ public class MissionManager : MonoBehaviour
                 animator.SetBool("isOpen", false);
             } else if(choice == 1){
                 dialogueText.text = "Ok! Ok! My bank acount is 4444-4444";
-                FindObjectOfType<GameManager>().victimCount++;
+                FindObjectOfType<GameManager>().ScamSuccessful();
                 animator.SetBool("isOpen", false);
             }
         } else if(missiontype == 2){
             if(choice == 0){
                 dialogueText.text = "Ok! My bank account is 3333-3333!";                
-                FindObjectOfType<GameManager>().victimCount++;
+                FindObjectOfType<GameManager>().ScamSuccessful();
                 animator.SetBool("isOpen", false);
             } else if(choice == 1){
                 dialogueText.text = "You're rude! Screw you! *SLAM PHONE*";

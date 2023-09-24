@@ -7,14 +7,6 @@ public class GameManager : MonoBehaviour
     public int victimCount = 0;
     public int currentLevel = 0;
 
-    void Update(){
-        if(victimCount == 1){
-            currentLevel = 1;
-        } else if(victimCount == 2){
-            currentLevel = 2;
-        }
-    }
-
     Dictionary<string, string[]> levelZero = new Dictionary<string, string[]>
     {
         { "Boss", new string[] { "WHAT'CHA LOOKIN AT BIG BAD BOSS FOR!!!", "SIT AT A CALL DESK!!!", "GET BACK TO WORK!!!" } },
@@ -50,6 +42,15 @@ public class GameManager : MonoBehaviour
         }
         else{
             return levelTwo[tag];
+        }
+    }
+
+    public void ScamSuccessful(){
+        victimCount++;
+        if(victimCount == 1){
+            currentLevel = 1;
+        } else if(victimCount == 2){
+            currentLevel = 2;
         }
     }
 }
