@@ -9,6 +9,7 @@ public class DeskController : MonoBehaviour
     public GameObject desk_with_person;
     public GameObject player;
     private bool playerInRange;
+    public Dialogue dialogue;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,6 @@ public class DeskController : MonoBehaviour
 
     void OnMouseDown(){
         print("clicking...");
-        Debug.Log("");
         if(playerInRange){
             print("");
             if(player.gameObject.GetComponent<SpriteRenderer>().enabled == true){
@@ -37,12 +37,14 @@ public class DeskController : MonoBehaviour
                 desk_empty.SetActive(false);
                 desk_with_person.SetActive(true);
                 player.GetComponent<PlayerController>().LockMovement();
+                FindObjectOfType<MissionManager>().InitMission();
             } 
             else{
                 player.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 desk_empty.SetActive(true);
                 desk_with_person.SetActive(false);
                 player.GetComponent<PlayerController>().UnlockMovement();
+                FindObjectOfType<MissionManager>().EndMission();
             }
         }
     }
