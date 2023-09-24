@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - GameObject
+  - NPC
+  - Boss
+  - Amelia
+  - Adam
+  - Rob
   layers:
   - Default
   - TransparentFX

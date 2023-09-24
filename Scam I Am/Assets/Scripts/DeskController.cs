@@ -28,7 +28,10 @@ public class DeskController : MonoBehaviour
     }
 
     void OnMouseDown(){
+        print("clicking...");
+        Debug.Log("");
         if(playerInRange){
+            print("");
             if(player.gameObject.GetComponent<SpriteRenderer>().enabled == true){
                 player.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 desk_empty.SetActive(false);

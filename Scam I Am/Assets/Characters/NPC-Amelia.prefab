@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 8770828468569425559}
   - component: {fileID: 995015244518972704}
   - component: {fileID: 1853040992923807016}
+  - component: {fileID: 1592066189495641997}
   m_Layer: 0
   m_Name: NPC-Amelia
-  m_TagString: Untagged
+  m_TagString: Amelia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1014631644, guid: c6f295bb3f7ca5e43b88171b7b5f538a, type: 3}
+  m_Sprite: {fileID: -1433862332, guid: c6f295bb3f7ca5e43b88171b7b5f538a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -171,7 +172,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 1.5
 --- !u!195 &995015244518972704
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -181,16 +182,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 7675053035507559137}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.4375
-  m_Speed: 3.5
+  m_Radius: 0.2
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.375
+  m_Height: 0.1
   m_BaseOffset: 0.6875
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -206,10 +207,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392165d8f3299f44b86012f9ac95f9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
   dialogue:
-  - Hello!
-  - Nice to meet you, I'm Amella!
-  wordSpeed: 0.06
+    name: Amella
+    sprite: {fileID: -1433862332, guid: c6f295bb3f7ca5e43b88171b7b5f538a, type: 3}
+    sentences: []
   target: {fileID: 0}
+--- !u!61 &1592066189495641997
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675053035507559137}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.375}
+    newSize: {x: 0.14, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.875, y: 1.375}
+  m_EdgeRadius: 0

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-
 using UnityEngine.AI;
 
 public class NPCController : MonoBehaviour
@@ -13,19 +13,26 @@ public class NPCController : MonoBehaviour
 
     [SerializeField] Transform target;
     private NavMeshAgent agent;
+    Animator animator;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       if(playerInRange == false)
-        agent.SetDestination(target.position);
+
+    private void FixedUpdate(){
+        if(playerInRange == false){
+            agent.SetDestination(target.position);
+        }
+        if(agent.velocity.magnitude != 0){
+            animator.SetFloat("Horizontal", agent.velocity.x);
+            animator.SetFloat("Vertical", agent.velocity.y);       
+        }
+        animator.SetFloat("Speed", agent.velocity.sqrMagnitude);
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -44,7 +51,8 @@ public class NPCController : MonoBehaviour
 
     void OnMouseDown(){
         if(playerInRange){
-           FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            dialogue.sentences = FindObjectOfType<GameManager>().GetDialogue(gameObject.tag);
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
         }
     }
 
