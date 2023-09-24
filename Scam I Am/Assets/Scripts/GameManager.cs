@@ -25,8 +25,18 @@ public class GameManager : MonoBehaviour
     {
         { "Boss", new string[] { "OH?! BEGINNER'S LUCK!", "MAYBE I'LL GIVE YOU A RAISE!", "KEEP SCAMMING!!!" } },
         { "Amelia", new string[] { "Heard you got a scam through...", "Poor old lady...", "I wish we didn't have to keep doing this...", "Maybe if we find evidence and call the police..." } },
-        { "Adam", new string[] {"Yo~ Nicee Bro~", "So many phones...", "Where are our phones?"}}
+        { "Adam", new string[] {"Yo~ Nicee Bro~", "So many phones...", "Where are our phones?"}},
+        { "Rob", new string[]{"You you you! You keep working!", "No wait, no I need the raise", "You stop working! Hmph!"}}
     };
+
+    Dictionary<string, string[]> levelTwo = new Dictionary<string, string[]>
+    {
+        { "Boss", new string[] { "MAYBE I WILL GIVE YOU A RAISE HAHA!", "GO TO MY OFFICE AND GRAB MY LAPTOP FOR ME WILL YA!" } },
+        { "Amelia", new string[] { "I think the boss has evidence on his computer...", "I also saw mean rob put our phones in the closet...", "Maybe if you can get them you can take picture evidence...", "And to call the police..."} },
+        { "Adam", new string[] {"Yoo dude you're like, the employee of the month broo"}},
+        { "Rob", new string[]{"You you you!", "I need to stop you from calling so I can be employee of the month", "Go get the mop from the closet and clean the bathroom!"}}
+    };
+
 
 
     public string[] GetDialogue(string tag){
@@ -37,9 +47,7 @@ public class GameManager : MonoBehaviour
             return levelOne[tag];
         }
         else{
-            return new string[] {""};
+            return levelTwo[tag];
         }
     }
-
-
 }
