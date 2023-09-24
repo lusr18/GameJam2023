@@ -6,9 +6,10 @@ using UnityEngine;
 public class ObjectInteract : MonoBehaviour
 {
     public GameObject player;
-    public AudioSource vendingMachine;
+    //public AudioSource vendingMachine;
     private bool playerInRange;
     // Start is called before the first frame update
+    public Dialogue dialogue;
     void Start()
     {
         playerInRange = false;
@@ -27,7 +28,11 @@ public class ObjectInteract : MonoBehaviour
 
     void OnMouseDown(){
         if(playerInRange){
-            vendingMachine.Play();
+            //vendingMachine.Play();
+            if(FindObjectOfType<GameManager>().currentLevel == 2 && gameObject.tag == "OfficePC"){
+                dialogue.sentences = new string[]{"Boss let me on his PC", "Found his evidence...", "I'm calling the police! I win!"};
+                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            }
         }
     }
 }
