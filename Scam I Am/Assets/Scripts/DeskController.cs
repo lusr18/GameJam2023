@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class DeskController : MonoBehaviour
 {
-    public GameObject desk_empty;
-    public GameObject desk_with_person;
     public GameObject player;
     private bool playerInRange;
     public Dialogue dialogue;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         playerInRange = false;
+        animator = GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -34,15 +34,13 @@ public class DeskController : MonoBehaviour
             print("");
             if(player.gameObject.GetComponent<SpriteRenderer>().enabled == true){
                 player.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                desk_empty.SetActive(false);
-                desk_with_person.SetActive(true);
+                animator.SetBool("personSitting", true);
                 player.GetComponent<PlayerController>().LockMovement();
                 FindObjectOfType<MissionManager>().InitMission();
             } 
             else{
                 player.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                desk_empty.SetActive(true);
-                desk_with_person.SetActive(false);
+                animator.SetBool("personSitting", false);
                 player.GetComponent<PlayerController>().UnlockMovement();
                 FindObjectOfType<MissionManager>().EndMission();
             }

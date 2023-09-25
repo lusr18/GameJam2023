@@ -123,5 +123,6 @@ public class MissionManager : MonoBehaviour
     public void EndMission(){
         animator.SetBool("isOpen", false);
         coldcall = true;
+        FindObjectOfType<DialogueManager>().EndDialogue();
     }
 }
