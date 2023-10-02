@@ -30,8 +30,9 @@ public class ObjectInteract : MonoBehaviour
         if(playerInRange){
             //vendingMachine.Play();
             if(FindObjectOfType<GameManager>().currentLevel == 2 && gameObject.tag == "OfficePC"){
-                dialogue.sentences = new string[]{"Boss let me on his PC", "Found his evidence...", "I'm calling the police! I win!"};
-                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                // dialogue.sentences = new string[]{"Boss let me on his PC", "Found his evidence...", "I'm calling the police! I win!"};
+                // FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                FindObjectOfType<GameManager>().GameOver();
             }
         }
     }

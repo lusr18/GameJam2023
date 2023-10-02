@@ -7,9 +7,7 @@ using UnityEngine.AI;
 public class NPCController : MonoBehaviour
 {
     public Dialogue dialogue;
-
     private bool playerInRange = false;
-
     [SerializeField] Transform[] targets;
     int currentTargetIndex = 0;
     private NavMeshAgent agent;
@@ -21,19 +19,21 @@ public class NPCController : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         animator = GetComponent<Animator>();
+        agent.SetDestination(targets[0].position);
     }
 
 
     private void FixedUpdate(){
         if(playerInRange == false){
             if(ReachedDestination()){
-                currentTargetIndex++;
+                currentTargetIndex += 1;
                 if(currentTargetIndex >= targets.Length){
                     currentTargetIndex = 0;
                 }
+                agent.SetDestination(targets[currentTargetIndex].position);
             }
-            agent.SetDestination(targets[currentTargetIndex].position);
         }
+
         if(agent.velocity.magnitude != 0){
             animator.SetFloat("Horizontal", agent.velocity.x);
             animator.SetFloat("Vertical", agent.velocity.y);       
@@ -41,19 +41,24 @@ public class NPCController : MonoBehaviour
         animator.SetFloat("Speed", agent.velocity.sqrMagnitude);
     }
 
+    IEnumerator SetNextDestination(){
+        yield return new WaitForSecondsRealtime(Random.Range(2, 8));
+        // print("current target index: " + currentTargetIndex);
+        // if(currentTargetIndex >= targets.Length){
+        //     currentTargetIndex = 0;
+        // }
+        if(ReachedDestination()){
+            currentTargetIndex++;
+        }
+    }
+
     public bool ReachedDestination()
     {
-        if (!agent.pathPending)
-        {
-            if (agent.remainingDistance <= agent.stoppingDistance)
-            {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-                {
-                    return true;
-                }
-            }
+        // print("remaining distance: " + agent.remainingDistance);
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {       
+            return true;   
         }
-
         return false;
     }
 

@@ -71,6 +71,7 @@ public class MissionManager : MonoBehaviour
                 animator.SetBool("isOpen", false);
             } else if(choice == 1){
                 dialogueText.text = "You're rude! Goodbye!";
+                MissionFailed();
                 animator.SetBool("isOpen", false);
             }
         } else if(missiontype == 1){
@@ -80,6 +81,7 @@ public class MissionManager : MonoBehaviour
             } else if(choice == 1){
                 dialogueText.text = "Ok! Ok! My bank acount is 4444-4444";
                 FindObjectOfType<GameManager>().ScamSuccessful();
+                MissionFailed();
                 animator.SetBool("isOpen", false);
             }
         } else if(missiontype == 2){
@@ -89,9 +91,15 @@ public class MissionManager : MonoBehaviour
                 animator.SetBool("isOpen", false);
             } else if(choice == 1){
                 dialogueText.text = "You're rude! Screw you! *SLAM PHONE*";
+                MissionFailed();
                 animator.SetBool("isOpen", false);
             }
         }
+    }
+
+    private void MissionFailed(){
+        dialogue.sentences = new string[]{"Well, that didn't go well..."};
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 
     private void SetChoice(int userChoice){
