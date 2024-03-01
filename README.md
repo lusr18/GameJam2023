@@ -8,5 +8,6 @@ As an undercover operative within a notorious scam call center, you must adopt t
 Newly implemented npc with AI NLP capabilities to enhance gameplay.
 
 ![image](https://github.com/lusr18/GameJam2023/assets/67540142/3df738cd-0023-4423-880d-dc8bbbf7b606)
+
 ![PHOTO-2023-11-15-15-38-21](https://github.com/lusr18/GameJam2023/assets/67540142/8202a496-9eb8-4ef6-b9e2-fb94f926826b)
 ![PHOTO-2023-11-15-15-39-54](https://github.com/lusr18/GameJam2023/assets/67540142/d331f760-e5d4-4467-a094-fbd7f5d3a4b6)
