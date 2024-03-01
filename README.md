@@ -1,5 +1,5 @@
-# ScamIAm
-Game Entry for the Adventure Game Jam 2023 
+# Scam I Am
+"Scam I Am" Game Entry for the Adventure Game Jam 2023 
 
 "Scam I Am" is a 2d top down decision making game.
 
